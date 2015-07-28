@@ -1,5 +1,5 @@
 {
-  "name": "SVG Workflow",
+  "name": "svg-workflow",
   "version": "0.1.0",
   "description": "Just some tests to optimize svg images",
   "repository": {
@@ -11,6 +11,7 @@
     "grunt-shell": "^1.1.2",
     "grunt-svg2png": "~0.2.5",
     "grunt-svgstore": "~0.3.6",
-    "load-grunt-tasks": "~0.2.0"
+    "load-grunt-tasks": "~0.2.0",
+    "svgo": "^0.5.3"
   }
 }
