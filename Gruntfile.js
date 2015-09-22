@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         files: [{ 
           flatten: true,
           cwd: 'compressed/', 
-          src: ['*.svg'], 
+          src: ['**/*.svg'], 
           dest: 'png' }
         ]
       }
