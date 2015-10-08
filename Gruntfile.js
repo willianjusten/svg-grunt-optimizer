@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     shell: {
       target: {
-        command: 'svgo -f original/serie-a/ -o compressed/serie-a --multipass -p 2 && svgo -f original/serie-b/ -o compressed/serie-b --multipass -p 2 && svgo -f original/europa/ -o compressed/europa --multipass -p 2' 
+        command: 'svgo -f _source_review/serie-a/ -o compressed_review/serie-a --multipass -p 2 && svgo -f _source_review/serie-b/ -o compressed_review/serie-b --multipass -p 2 && svgo -f _source_review/europa/ -o compressed_review/europa --multipass -p 2' 
       },
       options: {
         stdout: true
@@ -15,9 +15,9 @@ module.exports = function(grunt) {
     svgstore: {
       dist: {
         files: {
-          'build/serie-a-defs.svg': ['compressed/serie-a/*.svg'],
-          'build/serie-b-defs.svg': ['compressed/serie-b/*.svg'],
-          'build/europa-defs.svg': ['compressed/europa/*.svg']
+          'build/serie-a-defs.svg': ['compressed_review/serie-a/*.svg'],
+          'build/serie-b-defs.svg': ['compressed_review/serie-b/*.svg'],
+          'build/europa-defs.svg': ['compressed_review/europa/*.svg']
         },
       },
       options: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       dist: {
         files: [{ 
           flatten: true,
-          cwd: 'compressed/', 
+          cwd: 'compressed_review/', 
           src: ['**/*.svg'], 
           dest: 'png' }
         ]
