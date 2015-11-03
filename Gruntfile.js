@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     shell: {
       target: {
-        command: 'svgo -f _source_review/serie-a/ -o compressed_review/serie-a --multipass -p 2 && svgo -f _source_review/serie-b/ -o compressed_review/serie-b --multipass -p 2 && svgo -f _source_review/europa/ -o compressed_review/europa --multipass -p 2' 
+        command: 'svgo -f _source_review/serie-a/ -o compressed_review/serie-a --multipass -p 2 && svgo -f _source_review/serie-b/ -o compressed_review/serie-b --multipass -p 2 && svgo -f _source_review/europa/ -o compressed_review/europa --multipass -p 2'
       },
       options: {
         stdout: true
@@ -21,15 +21,18 @@ module.exports = function(grunt) {
         },
       },
       options: {
-        cleanup: true
+        cleanup: true,
+        svg: {
+          style: "display: none;"
+        }
       }
     },
     svg2png: {
       dist: {
-        files: [{ 
+        files: [{
           flatten: true,
-          cwd: 'compressed_review/', 
-          src: ['**/*.svg'], 
+          cwd: 'compressed_review/',
+          src: ['**/*.svg'],
           dest: 'png' }
         ]
       }
